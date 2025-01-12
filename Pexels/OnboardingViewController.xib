@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="Pexels" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="ntd-YV-Wyt" id="FXb-ZI-abe"/>
+                <outlet property="nextButton" destination="M9R-28-IY2" id="dGf-4o-9NG"/>
+                <outlet property="pageControl" destination="raG-yY-H09" id="MZH-7o-5Qv"/>
+                <outlet property="skipButton" destination="mZE-xe-VVk" id="hUf-Fn-iou"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,14 +32,56 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZE-xe-VVk">
+                    <rect key="frame" x="-22" y="674" width="94.333333333333329" height="44"/>
+                    <color key="backgroundColor" red="0.27843137254901962" green="0.33725490196078434" blue="0.87450980392156863" alpha="0.50179380664652573" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="iPP-C9-Knf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                    <inset key="contentEdgeInsets" minX="42" minY="0.0" maxX="20" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Skip">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="skipButtonClicked:" destination="-1" eventType="touchUpInside" id="Wgs-7L-zfo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9R-28-IY2">
+                    <rect key="frame" x="307" y="669" width="113" height="54"/>
+                    <color key="backgroundColor" red="0.27843137254901962" green="0.33725490196078434" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="JUH-xG-sMo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="47" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="raG-yY-H09">
+                    <rect key="frame" x="0.0" y="611" width="393" height="26"/>
+                    <color key="pageIndicatorTintColor" red="0.2784313725" green="0.33725490200000002" blue="0.87450980389999999" alpha="0.29997875750634434" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="0.2784313725" green="0.33725490200000002" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </pageControl>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="raG-yY-H09" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1ox-VQ-GHJ"/>
+                <constraint firstItem="M9R-28-IY2" firstAttribute="width" secondItem="mZE-xe-VVk" secondAttribute="width" multiplier="1.2" id="4pC-v1-I0N"/>
+                <constraint firstItem="M9R-28-IY2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="27" id="5is-no-0cX"/>
+                <constraint firstItem="M9R-28-IY2" firstAttribute="top" secondItem="raG-yY-H09" secondAttribute="bottom" constant="32" id="CrI-7d-dNn"/>
+                <constraint firstItem="M9R-28-IY2" firstAttribute="centerY" secondItem="mZE-xe-VVk" secondAttribute="centerY" id="JmS-2a-IOT"/>
+                <constraint firstItem="mZE-xe-VVk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-22" id="aJb-wy-ota"/>
                 <constraint firstAttribute="bottom" secondItem="ntd-YV-Wyt" secondAttribute="bottom" id="dcv-fw-0tZ"/>
                 <constraint firstItem="ntd-YV-Wyt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ivm-nA-PhU"/>
                 <constraint firstItem="ntd-YV-Wyt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jFA-qq-0tr"/>
                 <constraint firstItem="ntd-YV-Wyt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="l38-M3-bga"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="raG-yY-H09" secondAttribute="trailing" id="sxW-5X-8iw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mZE-xe-VVk" secondAttribute="bottom" constant="100" id="wt4-kg-sDZ"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
