@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="Pexels" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="ntd-YV-Wyt" id="FXb-ZI-abe"/>
-                <outlet property="nextButton" destination="M9R-28-IY2" id="dGf-4o-9NG"/>
+                <outlet property="nextButton" destination="M9R-28-IY2" id="oeX-jh-4Io"/>
                 <outlet property="pageControl" destination="raG-yY-H09" id="MZH-7o-5Qv"/>
                 <outlet property="skipButton" destination="mZE-xe-VVk" id="hUf-Fn-iou"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-YV-Wyt">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-YV-Wyt">
                     <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PMn-gq-igJ">
@@ -45,7 +45,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="skipButtonClicked:" destination="-1" eventType="touchUpInside" id="Wgs-7L-zfo"/>
+                        <action selector="skipButtonClicked:" destination="-1" eventType="touchUpInside" id="qia-ux-23q"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9R-28-IY2">
@@ -60,6 +60,9 @@
                     <state key="normal" title="Next">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="nextButtonClicked:" destination="-1" eventType="touchUpInside" id="Q72-TW-SnN"/>
+                    </connections>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="raG-yY-H09">
                     <rect key="frame" x="0.0" y="691" width="430" height="26"/>

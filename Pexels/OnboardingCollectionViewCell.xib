@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="TKn-p1-kUx">
-                        <rect key="frame" x="20" y="363.66666666666669" width="390" height="230.00000000000006"/>
+                        <rect key="frame" x="70" y="267.66666666666669" width="290" height="230"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="390" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-US-ee6">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="128"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Z5A-TA-9xZ">
-                                <rect key="frame" x="159.33333333333334" y="159.99999999999994" width="71.666666666666657" height="70"/>
+                                <rect key="frame" x="109.33333333333334" y="160" width="71.666666666666657" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYV-wY-rYP">
                                         <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="33.666666666666664"/>
@@ -32,7 +32,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-QL-O7G">
-                                        <rect key="frame" x="0.0" y="49.666666666666742" width="71.666666666666671" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="49.666666666666629" width="71.666666666666671" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -45,14 +45,13 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="TKn-p1-kUx" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="8sV-by-GgF"/>
-                <constraint firstItem="TKn-p1-kUx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="IuT-nI-aZi"/>
-                <constraint firstAttribute="trailing" secondItem="TKn-p1-kUx" secondAttribute="trailing" constant="20" id="jxm-ez-VIB"/>
+                <constraint firstItem="TKn-p1-kUx" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" multiplier="0.8" id="8sV-by-GgF"/>
+                <constraint firstItem="TKn-p1-kUx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="70" id="IuT-nI-aZi"/>
+                <constraint firstAttribute="trailing" secondItem="TKn-p1-kUx" secondAttribute="trailing" constant="70" id="jxm-ez-VIB"/>
             </constraints>
             <connections>
                 <outlet property="imageView" destination="0Wr-US-ee6" id="deE-5O-7am"/>
                 <outlet property="innerStackView" destination="Z5A-TA-9xZ" id="Igz-y1-muZ"/>
-                <outlet property="stackVIEW" destination="TKn-p1-kUx" id="hu4-sl-62M"/>
                 <outlet property="stackView" destination="TKn-p1-kUx" id="5dI-d8-UIx"/>
                 <outlet property="subtitleLabel" destination="DKe-QL-O7G" id="yJf-XB-FeS"/>
                 <outlet property="titleLabel" destination="qYV-wY-rYP" id="DfI-3y-8XM"/>
