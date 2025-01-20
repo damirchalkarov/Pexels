@@ -9,6 +9,8 @@ import UIKit
 
 class OnboardingViewController: UIViewController, UICollectionViewDelegate {
     
+    static let KEY: String = "UserDidSeeOnboarding"
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -16,6 +18,9 @@ class OnboardingViewController: UIViewController, UICollectionViewDelegate {
     
     var pages: [OnboardingModel] = [] {
         didSet {
+            
+            pageControl.numberOfPages = pages.count
+            
             collectionView.reloadData()
         }
     }
@@ -62,14 +67,41 @@ class OnboardingViewController: UIViewController, UICollectionViewDelegate {
             
             pageControl.currentPage += 1
             
-            let x: CGFloat = collectionView.frame.width * CGFloat(pageControl.currentPage)
-            collectionView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+            collectionView.scrollToItem(at: IndexPath(item: pageControl.currentPage, section: 0), at: .centeredHorizontally, animated: true)
+            
+            handlePageChanges()
+            
+//            let x: CGFloat = collectionView.frame.width * CGFloat(pageControl.currentPage)
+//            collectionView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
             
         }
         
     }
     
     func start() {
+        
+        UserDefaults.standard.set(true, forKey: OnboardingViewController.KEY)
+        
+        let mainVC = MainViewController()
+        let navC = UINavigationController(rootViewController: mainVC)
+        view.window?.rootViewController = navC
+        view.window?.makeKeyAndVisible()
+        
+    }
+    
+    func handlePageChanges() {
+        
+        if pageControl.currentPage == pageControl.numberOfPages - 1 {
+            
+            skipButton.isHidden = true
+            nextButton.setTitle("Start", for: .normal)
+            
+        } else {
+            
+            skipButton.isHidden = false
+            nextButton.setTitle("Next", for: .normal)
+            
+        }
         
     }
 
@@ -103,7 +135,10 @@ extension OnboardingViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        
+        handlePageChanges()
     }
+    
     
 }
 
